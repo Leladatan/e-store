@@ -1,14 +1,24 @@
-import {type FC} from 'react';
+"use client";
+
+import {type FC, MouseEventHandler} from 'react';
 import {Product} from "@/types";
 import Currency from "@/components/ui/currency";
 import Button from "@/components/ui/Button";
 import {FaShoppingCart} from "react-icons/fa";
+import useCart from "@/hooks/use-cart";
 
 interface InfoProps {
     product: Product;
 }
 
 const Info: FC<InfoProps> = ({product}) => {
+    const cart = useCart();
+
+    const onAddToCart: MouseEventHandler<HTMLButtonElement> = (e): void => {
+        e.stopPropagation();
+        cart.addProduct(product);
+    };
+
     return (
         <div className="">
             <h1 className="text-3xl font-bold text-gray-900">{product.name}</h1>
@@ -42,7 +52,7 @@ const Info: FC<InfoProps> = ({product}) => {
                     </div>
                 </div>
                 <div className="mt-10 flex items-center gap-x-3">
-                    <Button className="flex items-center gap-x-2">
+                    <Button className="flex items-center gap-x-2" onClick={onAddToCart}>
                         Add To Cart
                         <FaShoppingCart size={20} className="text-white"/>
                     </Button>
