@@ -31,7 +31,7 @@ const Summary: FC = () => {
 
     const onCheckout = async () => {
       const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/checkout`, {
-          productId: products.map(product => product.id),
+          productIds: products.map(product => product.id),
       });
 
       window.location = response.data.url;
