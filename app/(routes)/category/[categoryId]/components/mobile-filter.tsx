@@ -2,7 +2,7 @@
 
 import {type FC, useState} from 'react';
 import {Color, Size} from "@/types";
-import Button from "@/components/ui/Button";
+import Button from "@/components/ui/button";
 import {BiPlus} from "react-icons/bi";
 import {Dialog} from "@headlessui/react";
 import IconButton from "@/components/ui/icon-button";

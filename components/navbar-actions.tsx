@@ -1,7 +1,7 @@
 "use client";
 
 import {type FC, useEffect, useState} from 'react';
-import Button from "@/components/ui/Button";
+import Button from "@/components/ui/button";
 import {FaShoppingCart} from "react-icons/fa";
 import useCart from "@/hooks/use-cart";
 import {useRouter} from "next/navigation";

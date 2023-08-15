@@ -3,7 +3,7 @@
 import {type FC, MouseEventHandler} from 'react';
 import {Product} from "@/types";
 import Currency from "@/components/ui/currency";
-import Button from "@/components/ui/Button";
+import Button from "@/components/ui/button";
 import {FaShoppingCart} from "react-icons/fa";
 import useCart from "@/hooks/use-cart";
 
